@@ -38,9 +38,9 @@
                     caseMetas.push(caseMeta)
                 }
             }
-            const prevMetas = await readFileSync(FILE_PATH)
             let prevMetasJson = []
             try {
+                const prevMetas = await readFileSync(FILE_PATH)
                 prevMetasJson = JSON.parse(prevMetas)
             } catch (e) {
                 console.error(e)
