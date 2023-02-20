@@ -26,7 +26,7 @@
     let currentPage = 1
     const maxPages = await getTotalNumberOfSearchPages(currentPage, currentYear)
     for (currentYear; currentYear <= maxYear; currentYear += 1) {
-        console.log(`currentYear: ${currentYear}`)
+        console.log(`currentPage: ${currentPage} of ${maxPages}`)
         for (currentPage; currentPage <= maxPages; currentPage += 1) {
             console.log(`currentPage: ${currentPage}`)
             const celexIDs = await getCelexIDSFromPageAndYear(currentPage, currentYear)
