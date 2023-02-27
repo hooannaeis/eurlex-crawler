@@ -10,6 +10,7 @@ async function getParsedHtml(url) {
         }
         throw new Error(response)
     } catch (error) {
+        if (error.response.statusText ) return console.log(error.response.statusText)
         console.log(error)
     }
 }
