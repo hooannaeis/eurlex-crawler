@@ -14,13 +14,13 @@
  *
  */
 
-(async function () {
+;(async function () {
     const {
         getCelexIDSFromPageAndYear,
         getTotalNumberOfSearchPages,
     } = require('./utils/celexIDs')
     const { getDocumentMeta } = require('./utils/caseMeta')
-    const { getParsedBody } = require('./utils/caseBody')
+    const { getParsedBody } = require('./utils/celexDocumentBody')
     const { writeFileSync, readFileSync } = require('fs')
     const FILE_PATH = 'eurlexdata.json'
 

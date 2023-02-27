@@ -10,7 +10,7 @@ async function getParsedBody(celexID) {
     )}`
     try {
         const caseBody = await getParsedHtml(CASE_BODY_URL)
-        const caseParagraphs = getListTextsBySelector(caseBody, 'body p')
+        const caseParagraphs = getListTextsBySelector(caseBody, 'body p', true)
         if (caseParagraphs && caseParagraphs.length) {
             return caseParagraphs
         }

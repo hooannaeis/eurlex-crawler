@@ -10,7 +10,7 @@ async function getParsedHtml(url) {
         }
         throw new Error(response)
     } catch (error) {
-        console.log(error.response.body)
+        console.log(error)
     }
 }
 
@@ -24,19 +24,42 @@ function getRegexMatchesFromString(input, regex) {
     }
 }
 
-function getListTextsBySelector(caseHtml, selector) {
+
+/**
+ * 
+ * @param {Object} caseHtml html object
+ * @param {String} selector CSS elector
+ * @param {Boolean} emphasizeNodeSpecialness if true, objects in the returned array will have an indication if their class is different to the previous node's
+ * @returns Array
+ */
+function getListTextsBySelector(caseHtml, selector, emphasizeNodeSpecialness) {
     try {
         const listItems = []
         const itemNodes = caseHtml.querySelectorAll(selector)
         if (itemNodes && itemNodes.length) {
+            let previousClassName;
             itemNodes.forEach((itemNode) => {
                 const cleanItemNode = cleanseString(itemNode.innerText.trim())
-                listItems.push(cleanItemNode)
+                let nodetoPush = cleanItemNode
+                if (emphasizeNodeSpecialness) {
+                    nodetoPush = getObjectWithClassNameChange(itemNode, previousClassName)
+                    previousClassName = itemNode.classNames
+                }
+                listItems.push(nodetoPush)
             })
         }
         return listItems
     } catch (e) {
         return []
+    }
+}
+
+function getObjectWithClassNameChange(itemNode, previousClassName) {
+    const thisClassNames = itemNode.classNames
+    return {
+        text: cleanseString(itemNode.innerText.trim()),
+        classNameChange: thisClassNames !== previousClassName,
+        isAnchor: Boolean(itemNode.id)
     }
 }
 
