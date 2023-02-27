@@ -20,15 +20,14 @@
     const { writeFileSync, readFileSync } = require("fs")
     const FILE_PATH = "metas.json"
 
-
     const maxYear = new Date().getFullYear()
     let currentYear = 2022 // in production change this to the first year of data (e. g. 2010)
     let currentPage = 1
     const maxPages = await getTotalNumberOfSearchPages(currentPage, currentYear)
     for (currentYear; currentYear <= maxYear; currentYear += 1) {
-        console.log(`currentPage: ${currentPage} of ${maxPages}`)
+        console.log(`currentYear: ${currentYear} of ${maxYear}`)
         for (currentPage; currentPage <= maxPages; currentPage += 1) {
-            console.log(`currentPage: ${currentPage}`)
+            console.log(`currentPage: ${currentPage} of ${maxPages}`)
             const celexIDs = await getCelexIDSFromPageAndYear(currentPage, currentYear)
             const caseMetas = []
             if (celexIDs.length) {
