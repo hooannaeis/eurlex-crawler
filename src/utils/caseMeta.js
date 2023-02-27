@@ -1,5 +1,8 @@
-const { getParsedHtml, getRegexMatchesFromString, getListTextsBySelector } = require("./utilities")
-
+const {
+    getParsedHtml,
+    getRegexMatchesFromString,
+    getListTextsBySelector,
+} = require('./utilities')
 
 /**
  * @param {String} celexID celex ID the uniquely identifies a document on eurlex (https://eur-lex.europa.eu/content/help/eurlex-content/celex-number.html#:~:text=A%20CELEX%20number%20is%20a,on%20the%20type%20of%20document.)
@@ -8,7 +11,9 @@ const { getParsedHtml, getRegexMatchesFromString, getListTextsBySelector } = req
 async function getDocumentMeta(celexID) {
     const caseMeta = getDocumentMetaSkelleton()
     caseMeta.id = celexID
-    const CASE_META_URL = `https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=${encodeURIComponent('CELEX:' + celexID)}`
+    const CASE_META_URL = `https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=${encodeURIComponent(
+        'CELEX:' + celexID
+    )}`
     const caseHtml = await getParsedHtml(CASE_META_URL)
 
     caseMeta.type = getCaseType(caseHtml)
@@ -16,7 +21,9 @@ async function getDocumentMeta(celexID) {
     caseMeta.date = getCaseDate(caseHtml)
     caseMeta.tags = getCaseTags(caseHtml)
     caseMeta.references.raw = getRawDocumentReferences(caseHtml)
-    caseMeta.references.tokenized = getTokenizedReferences(caseMeta.references.raw)
+    caseMeta.references.tokenized = getTokenizedReferences(
+        caseMeta.references.raw
+    )
     return caseMeta
 }
 
@@ -30,27 +37,26 @@ function getDocumentMetaSkelleton() {
         authentic_language: undefined,
         references: {
             raw: [],
-            tokenized: []
-        } // 
+            tokenized: [],
+        }, //
     }
 }
 
 function getCaseTitle(caseHtml) {
     try {
-        const TITLE_ID = "#title"
+        const TITLE_ID = '#title'
         const titleNode = caseHtml.querySelector(TITLE_ID)
         if (titleNode && titleNode.innerText) {
             return titleNode.innerText.trim()
         }
     } catch (e) {
-        return "default title"
+        return 'default title'
     }
 }
 
 function getCaseType(caseHtml) {
     try {
-
-        const typeNode = caseHtml.querySelector("#PPMisc_Contents")
+        const typeNode = caseHtml.querySelector('#PPMisc_Contents')
         if (typeNode && typeNode.innerText) {
             const typeText = typeNode.innerText.trim()
             const matches = [...typeText.matchAll(/Form:[\n\r\s]*(\w+)/gi)]
@@ -59,39 +65,47 @@ function getCaseType(caseHtml) {
             }
         }
     } catch (e) {
-        return "default caseType"
+        return 'default caseType'
     }
 }
 
 function getCaseDate(caseHtml) {
     try {
-        const DATE_ID = "#PPDates_Contents"
+        const DATE_ID = '#PPDates_Contents'
         const dateNode = caseHtml.querySelector(DATE_ID)
         if (dateNode) {
             const dateNodeText = dateNode.innerText.trim()
-            let matches = [...dateNodeText.matchAll(/Date of document:[\n\r\s]*(\d{1,2}\/\d{1,2}\/\d{4})/gmi)]
+            let matches = [
+                ...dateNodeText.matchAll(
+                    /Date of document:[\n\r\s]*(\d{1,2}\/\d{1,2}\/\d{4})/gim
+                ),
+            ]
             if (matches[0] && matches[0][1]) {
                 return matches[0][1]
             }
-            matches = [...dateNodeText.matchAll(/Date of vote:[\n\r\s]*(\d{1,2}\/\d{1,2}\/\d{4})/gmi)]
+            matches = [
+                ...dateNodeText.matchAll(
+                    /Date of vote:[\n\r\s]*(\d{1,2}\/\d{1,2}\/\d{4})/gim
+                ),
+            ]
             if (matches[0] && matches[0][1]) {
                 return matches[0][1]
             }
             return
         }
     } catch (e) {
-        return "default title"
+        return 'default title'
     }
 }
 
 /**
- * 
+ *
  * @param {Object} caseHtml parsed case HTML as provisioned by axios
  * @returns [Array] of strings
  */
 function getCaseTags(caseHtml) {
     try {
-        const TAG_SELECTOR = "#PPClass_Contents li"
+        const TAG_SELECTOR = '#PPClass_Contents li'
         const tags = getListTextsBySelector(caseHtml, TAG_SELECTOR)
         return tags
     } catch (e) {
@@ -100,14 +114,13 @@ function getCaseTags(caseHtml) {
 }
 
 /**
- * 
+ *
  * @param {Object} caseHtml parsed case HTML as provisioned by axios
  * @returns [Array] of strings
  */
 function getRawDocumentReferences(caseHtml) {
     try {
-
-        const TAG_SELECTOR = "#PPLinked_Contents li"
+        const TAG_SELECTOR = '#PPLinked_Contents li'
         const tags = getListTextsBySelector(caseHtml, TAG_SELECTOR)
         return tags
     } catch (e) {
@@ -116,16 +129,17 @@ function getRawDocumentReferences(caseHtml) {
 }
 
 /**
- * 
+ *
  * @param {Object} caseHtml parsed case HTML as provisioned by axios
  * @returns [Array] of strings
  */
 function getTokenizedReferences(rawReferences) {
     try {
-
-        if (!rawReferences || !rawReferences.length || !rawReferences.push) { return [] }
+        if (!rawReferences || !rawReferences.length || !rawReferences.push) {
+            return []
+        }
         const tokenizedReferences = []
-        rawReferences.forEach(ref => {
+        rawReferences.forEach((ref) => {
             const celexID = getCelexIDFromString(ref)
             const docSpecifiers = getDocumentSpecifierFromReference(ref)
             tokenizedReferences.push([...celexID, ...docSpecifiers])
@@ -148,7 +162,6 @@ function getDocumentSpecifierFromReference(input) {
     }
 }
 
-
 function getCelexIDFromString(input) {
     try {
         // based on https://eur-lex.europa.eu/content/help/eurlex-content/celex-number.html
@@ -161,4 +174,9 @@ function getCelexIDFromString(input) {
     }
 }
 
-module.exports = { getDocumentMeta, getCelexIDFromString, getDocumentSpecifierFromReference, getTokenizedReferences }
+module.exports = {
+    getDocumentMeta,
+    getCelexIDFromString,
+    getDocumentSpecifierFromReference,
+    getTokenizedReferences,
+}

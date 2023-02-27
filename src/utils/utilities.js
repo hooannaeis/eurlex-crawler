@@ -1,5 +1,5 @@
-const axios = require('axios');
-const { parse } = require('node-html-parser');
+const axios = require('axios')
+const { parse } = require('node-html-parser')
 
 async function getParsedHtml(url) {
     try {
@@ -9,15 +9,13 @@ async function getParsedHtml(url) {
             return parsedHtml
         }
         throw new Error(response)
-
     } catch (error) {
-        console.log(error.response.body);
+        console.log(error.response.body)
     }
 }
 
 function getRegexMatchesFromString(input, regex) {
     try {
-
         const matches = input.match(regex)
         if (matches) return matches
         return undefined
@@ -28,11 +26,10 @@ function getRegexMatchesFromString(input, regex) {
 
 function getListTextsBySelector(caseHtml, selector) {
     try {
-
         const listItems = []
         const itemNodes = caseHtml.querySelectorAll(selector)
         if (itemNodes && itemNodes.length) {
-            itemNodes.forEach(itemNode => {
+            itemNodes.forEach((itemNode) => {
                 const cleanItemNode = cleanseString(itemNode.innerText.trim())
                 listItems.push(cleanItemNode)
             })
@@ -47,4 +44,8 @@ function cleanseString(str) {
     return str.replace(/\s\s+/g, ' ')
 }
 
-module.exports = {getParsedHtml, getRegexMatchesFromString, getListTextsBySelector}
+module.exports = {
+    getParsedHtml,
+    getRegexMatchesFromString,
+    getListTextsBySelector,
+}
