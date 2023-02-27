@@ -1,4 +1,4 @@
-const getParsedHtml = require("./getParsedHtml")
+const { getParsedHtml, getRegexMatchesFromString, getListTextsBySelector } = require("./utilities")
 
 
 /**
@@ -27,6 +27,7 @@ function getDocumentMetaSkelleton() {
         tags: [], // selection of descriptive tags
         type: undefined, // document type, e.g. resolution, treaty, etc
         date: undefined,
+        authentic_language: undefined,
         references: {
             raw: [],
             tokenized: []
@@ -36,7 +37,6 @@ function getDocumentMetaSkelleton() {
 
 function getCaseTitle(caseHtml) {
     try {
-
         const TITLE_ID = "#title"
         const titleNode = caseHtml.querySelector(TITLE_ID)
         if (titleNode && titleNode.innerText) {
@@ -159,38 +159,6 @@ function getCelexIDFromString(input) {
     } catch (e) {
         return []
     }
-}
-
-function getRegexMatchesFromString(input, regex) {
-    try {
-
-        const matches = input.match(regex)
-        if (matches) return matches
-        return undefined
-    } catch (e) {
-        return undefined
-    }
-}
-
-function getListTextsBySelector(caseHtml, selector) {
-    try {
-
-        const listItems = []
-        const itemNodes = caseHtml.querySelectorAll(selector)
-        if (itemNodes && itemNodes.length) {
-            itemNodes.forEach(itemNode => {
-                const cleanItemNode = cleanseString(itemNode.innerText.trim())
-                listItems.push(cleanItemNode)
-            })
-        }
-        return listItems
-    } catch (e) {
-        return []
-    }
-}
-
-function cleanseString(str) {
-    return str.replace(/\s\s+/g, ' ').toLowerCase()
 }
 
 module.exports = { getDocumentMeta, getCelexIDFromString, getDocumentSpecifierFromReference, getTokenizedReferences }

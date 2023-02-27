@@ -1,4 +1,4 @@
-const getParsedHtml = require("./getParsedHtml")
+const { getParsedHtml } = require("./utilities")
 
 /**
  * parses all celex-IDs from the search results of the serach page for the given page/year
