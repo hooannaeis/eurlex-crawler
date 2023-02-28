@@ -14,7 +14,7 @@
  *
  */
 
-;(async function () {
+; (async function () {
     const {
         getCelexIDSFromPageAndYear,
         getTotalNumberOfSearchPages,
@@ -47,17 +47,17 @@
                         caseBody,
                     }
                 }
-            }
-            let prevEurlexDataJson = {}
-            try {
-                const prevEurlexData = await readFileSync(FILE_PATH)
-                prevEurlexDataJson = JSON.parse(prevEurlexData)
-            } catch (e) {
-                console.error(e)
-            }
+                let prevEurlexDataJson = {}
+                try {
+                    const prevEurlexData = await readFileSync(FILE_PATH)
+                    prevEurlexDataJson = JSON.parse(prevEurlexData)
+                } catch (e) {
+                    console.error(e)
+                }
 
-            const newMetas = { ...prevEurlexDataJson, ...eurLexData }
-            writeFileSync(FILE_PATH, JSON.stringify(newMetas))
+                const newMetas = { ...prevEurlexDataJson, ...eurLexData }
+                writeFileSync(FILE_PATH, JSON.stringify(newMetas))
+            }
         }
     }
 })()

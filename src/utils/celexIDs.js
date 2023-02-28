@@ -27,6 +27,7 @@ function getDocumentOverviewURL(currentPage, currentYear) {
  * parses the celex IDs from an html object
  */
 async function getCelexIDsFromHtml(parsedHtml) {
+    if (!parsedHtml || !parsedHtml.querySelectorAll) return
     const linkNodes = parsedHtml.querySelectorAll('.title')
     const celexIDs = []
     if (linkNodes && linkNodes.length) {
