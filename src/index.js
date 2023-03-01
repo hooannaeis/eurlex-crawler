@@ -25,12 +25,12 @@
     const FILE_PATH = 'eurlexdata.json'
 
     const maxYear = new Date().getFullYear()
-    let currentYear = 2022 // in production change this to the first year of data (e. g. 2010)
-    let currentPage = 1
-    const maxPages = await getTotalNumberOfSearchPages(currentPage, currentYear)
-    for (currentYear; currentYear <= maxYear; currentYear += 1) {
+    for (let currentYear = 2022; currentYear <= maxYear; currentYear += 1) {
         console.log(`currentYear: ${currentYear} of ${maxYear}`)
-        for (currentPage; currentPage <= maxPages; currentPage += 1) {
+        // const maxPages = await getTotalNumberOfSearchPages(1, currentYear)
+        const maxPages = 2
+        
+        for (let currentPage = 1; currentPage <= maxPages; currentPage += 1) {
             console.log(`page: ${currentPage}/${maxPages}`)
             const celexIDs = await getCelexIDSFromPageAndYear(
                 currentPage,
