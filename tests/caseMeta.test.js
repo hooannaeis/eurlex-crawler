@@ -2,7 +2,7 @@ const {
     getCelexIDFromString,
     getDocumentSpecifierFromReference,
     getTokenizedReferences,
-} = require('../src/utils/caseMeta')
+} = require('../src/eurLex/caseMeta')
 
 test('getCelexIDFromString', () => {
     expect(
