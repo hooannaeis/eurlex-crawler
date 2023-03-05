@@ -1,7 +1,7 @@
-node_modules/*
-package-lock.json
+*/node_modules/*
+*/package-lock.json
 *metas.json
 *eurlexdata.json
-eurlexCases.json
-eurlexdata-bq.json
-eurlexLegalActs.json
+*/eurlexCases.json
+*/eurlexdata-bq.json
+*/eurlexLegalActs.json
