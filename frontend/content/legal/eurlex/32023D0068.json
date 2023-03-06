@@ -1,0 +1,383 @@
+{
+    "meta": {
+        "id": "32023D0068",
+        "title": "Decision (EU) 2023/68 of the European Parliament and of the Council of 14 December 2022 on the mobilisation of the European Union Solidarity Fund to provide assistance to Germany, Belgium, the Netherlands, Austria, Luxembourg, Spain and Greece further to natural disasters that took place in those countries in the course of 2021",
+        "tags": [
+            "flood",
+            "payment appropriation",
+            "aid to disaster victims",
+            "general budget (EU)",
+            "EU Member State",
+            "earthquake",
+            "commitment of expenditure",
+            "volcanic eruption",
+            "emergency aid",
+            "European Union Solidarity Fund",
+            "Financial provisions",
+            "Economic, social and territorial cohesion",
+            "Regional policy",
+            "14.40.20.00 Regional policy and coordination of structural instruments / Autonomous regional action / Aid for stricken regions"
+        ],
+        "type": "Decision",
+        "date": "14/12/2022",
+        "references": {
+            "raw": [
+                "32002R2012 - A04P3",
+                "32020Q1222(01) - PT10",
+                "52022PC0665 Adopted on: 14/12/2022",
+                "32020R2093"
+            ],
+            "tokenized": [
+                [
+                    "32002R2012"
+                ],
+                [
+                    "32020Q1222"
+                ],
+                [
+                    "52022PC0665"
+                ],
+                [
+                    "32020R2093"
+                ]
+            ]
+        }
+    },
+    "body": [
+        {
+            "text": "10.1.2023",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "EN",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "Official Journal of the European Union",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "L 7/25",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "DECISION (EU) 2023/68 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL",
+            "classNameChange": true,
+            "isAnchor": true
+        },
+        {
+            "text": "of 14 December 2022",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "on the mobilisation of the European Union Solidarity Fund to provide assistance to Germany, Belgium, the Netherlands, Austria, Luxembourg, Spain and Greece further to natural disasters that took place in those countries in the course of 2021",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "Having regard to the Treaty on the Functioning of the European Union,",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "Having regard to Council Regulation (EC) No 2012/2002 of 11 November 2002 establishing the European Union Solidarity Fund (1), and in particular Article 4(3) thereof,",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "Having regard to the Interinstitutional Agreement of 16 December 2020 between the European Parliament, the Council of the European Union and the European Commission on budgetary discipline, on cooperation in budgetary matters and on sound financial management, as well as on new own resources, including a roadmap towards the introduction of new own resources (IIA) (2), and in particular point 10 thereof,",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "Having regard to the proposal from the European Commission,",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "Whereas:",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(1)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "The European Union Solidarity Fund ('the Fund') aims to enable the Union to respond in a rapid, efficient and flexible manner to emergency situations in order to show solidarity with the population of regions struck by major or regional natural disasters or major public health emergency.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(2)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "The Fund is not to exceed the ceilings as laid down in Article 9 of Council Regulation (EU, Euratom) 2020/2093 (3).",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(3)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "On 1 October 2021, Germany submitted an application to mobilise the Fund, following the floods in July 2021.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(4)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "On 1 October 2021, Belgium submitted an application to mobilise the Fund, following the floods in July 2021.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(5)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "On 1 October 2021, the Netherlands submitted an application to mobilise the Fund, following the floods in July 2021.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(6)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "On 5 October 2021, Austria submitted an application to mobilise the Fund, following the floods in July 2021.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(7)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "On 6 October 2021, Luxembourg submitted an application to mobilise the Fund, following the floods in July 2021.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(8)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "On 3 December 2021, Spain submitted an application to mobilise the Fund, following the volcanic eruption on the island of La Palma on 19 September 2021. On 22 March 2022, Spain submitted an update to the application.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(9)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "On 16 December 2021, Greece submitted an application to mobilise the Fund, following the earthquake in Crete on 27 September 2021.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(10)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "The abovementioned applications meet the conditions for providing a financial contribution from the Fund, as laid down in Article 4 of Regulation (EC) No 2012/2002.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(11)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "The Fund should therefore be mobilised in order to provide a financial contribution to Germany, Belgium, the Netherlands, Austria, Luxembourg, Spain and Greece.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(12)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "In order to minimise the time taken to mobilise the Fund, this Decision should apply from the date of its adoption,",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "HAVE ADOPTED THIS DECISION:",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "Article 1",
+            "classNameChange": true,
+            "isAnchor": true
+        },
+        {
+            "text": "For the general budget of the Union for the financial year 2022, the European Union Solidarity Fund shall be mobilised as follows in commitment and payment appropriations in relation to natural disasters:",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "(a)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "the amount of EUR 612 611 256 shall be provided to Germany in relation to the floods of 2021;",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(b)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "the amount of EUR 87 737 427 shall be provided to Belgium in relation to the floods of 2021;",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(c)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "the amount of EUR 4 713 027 shall be provided to the Netherlands in relation to the floods of 2021;",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(d)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "the amount of EUR 797 520 shall be provided to Austria in relation to the floods of 2021;",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(e)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "the amount of EUR 1 822 056 shall be provided to Luxembourg in relation to the floods of 2021;",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(f)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "the amount of EUR 9 449 589 shall be provided to Spain in relation to the volcano eruption in La Palma;",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(g)",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "the amount of EUR 1 351 886 shall be provided to Greece in relation to the earthquake in Crete.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "Article 2",
+            "classNameChange": true,
+            "isAnchor": true
+        },
+        {
+            "text": "This Decision shall enter into force on the day of its publication in the Official Journal of the European Union.",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "It shall apply from 14 December 2022.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "Done at Strasbourg, 14 December 2022.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "For the European Parliament",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "The President",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "R. METSOLA",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "For the Council",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "The President",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "M. BEK",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(1) OJ L 311, 14.11.2002, p. 3.",
+            "classNameChange": true,
+            "isAnchor": false
+        },
+        {
+            "text": "(2) OJ L 433I, 22.12.2020, p. 28.",
+            "classNameChange": false,
+            "isAnchor": false
+        },
+        {
+            "text": "(3) Council Regulation (EU, Euratom) 2020/2093 of 17 December 2020 laying down the multiannual financial framework for the years 2021 to 2027 (OJ L 433 I, 22.12.2020, p. 11).",
+            "classNameChange": false,
+            "isAnchor": false
+        }
+    ]
+}
