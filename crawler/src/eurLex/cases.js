@@ -6,13 +6,13 @@ const { getDocumentMeta } = require('./documentMeta')
 const { getParsedBody } = require('./documentBody')
 const { writeFileSync, readFileSync } = require('fs')
 
-async function getAllCases() {
+async function getAllCases(inputMinYear, inputMaxYear) {
     console.log("GETTING CASES")
     console.log("-------------")
-    const FILE_PATH = 'eurlexCases.json'
 
-    const maxYear = new Date().getFullYear()
-    for (let currentYear = 2015; currentYear <= maxYear; currentYear += 1) {
+    const maxYear = inputMaxYear || new Date().getFullYear()
+    for (let currentYear = inputMinYear || 2015; currentYear <= maxYear; currentYear += 1) {
+        let FILE_PATH = `cases-${currentYear}.json`
         console.log(`currentYear: ${currentYear} of ${maxYear}`)
         const maxPages = await getTotalNumberOfCaseSearchPages(1, currentYear)
 
