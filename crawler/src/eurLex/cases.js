@@ -23,7 +23,6 @@ async function getAllCases(inputMinYear, inputMaxYear) {
                 currentYear
             )
             if (celexIDs?.length) {
-                const eurLexData = await getDataFromCelexIDs(celexIDs)
                 let prevEurlexDataJson = {}
                 try {
                     const prevEurlexData = await readFileSync(FILE_PATH)
@@ -31,6 +30,7 @@ async function getAllCases(inputMinYear, inputMaxYear) {
                 } catch (e) {
                     console.error(e)
                 }
+                const eurLexData = await getDataFromCelexIDs(celexIDs, prevEurlexDataJson)
 
                 const newMetas = { ...prevEurlexDataJson, ...eurLexData }
                 writeFileSync(FILE_PATH, JSON.stringify(newMetas))
