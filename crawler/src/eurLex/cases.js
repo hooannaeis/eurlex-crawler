@@ -12,7 +12,7 @@ async function getAllCases(inputMinYear, inputMaxYear) {
 
     const maxYear = inputMaxYear || new Date().getFullYear()
     for (let currentYear = inputMinYear || 2015; currentYear <= maxYear; currentYear += 1) {
-        let FILE_PATH = `cases-${currentYear}.json`
+        let FILE_PATH = `./data/cases-${currentYear}.json`
         console.log(`currentYear: ${currentYear} of ${maxYear}`)
         const maxPages = await getTotalNumberOfCaseSearchPages(1, currentYear)
 
@@ -39,10 +39,23 @@ async function getAllCases(inputMinYear, inputMaxYear) {
     }
 }
 
-async function getDataFromCelexIDs(celexIDs) {
+
+/**
+ * 
+ * @param {Array} celexIDs list of celexIDs that will be retrieved from eurlex
+ * @param {Object} prevEurlexDataJson JSON object denoting the celexIDs that already have been retrieved in the past
+ * @returns Object that contains the document for the celexIDs that are not in the prevEurLexDataJson
+ */
+async function getDataFromCelexIDs(celexIDs, prevEurlexDataJson) {
     const eurLexData = {}
     for (let i = 0; i < celexIDs.length; i++) {
         const celexID = celexIDs[i]
+        if (prevEurlexDataJson[celexID]) {
+            console.log(`${celexID} --- skipping`)
+            continue
+        }
+        console.log(`${celexID} --- retrvieving`)
+
         const caseMeta = await getDocumentMeta(celexID)
         const caseBody = await getParsedBody(celexID)
         eurLexData[celexID] = {
