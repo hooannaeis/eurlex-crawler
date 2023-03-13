@@ -22,7 +22,7 @@ async function getAllCases(inputMinYear, inputMaxYear) {
                 currentPage,
                 currentYear
             )
-            if (celexIDs.length) {
+            if (celexIDs?.length) {
                 const eurLexData = await getDataFromCelexIDs(celexIDs)
                 let prevEurlexDataJson = {}
                 try {
@@ -50,7 +50,7 @@ async function getDataFromCelexIDs(celexIDs, prevEurlexDataJson) {
     const eurLexData = {}
     for (let i = 0; i < celexIDs.length; i++) {
         const celexID = celexIDs[i]
-        if (prevEurlexDataJson[celexID]) {
+        if (prevEurlexDataJson?.[celexID]) {
             console.log(`${celexID} --- skipping`)
             continue
         }

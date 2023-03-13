@@ -46,7 +46,7 @@ function getCaseTitle(caseHtml) {
     try {
         const TITLE_ID = '#title'
         const titleNode = caseHtml.querySelector(TITLE_ID)
-        if (titleNode && titleNode.innerText) {
+        if (titleNode?.innerText) {
             return titleNode.innerText.trim()
         }
     } catch (e) {
@@ -57,10 +57,10 @@ function getCaseTitle(caseHtml) {
 function getCaseType(caseHtml) {
     try {
         const typeNode = caseHtml.querySelector('#PPMisc_Contents')
-        if (typeNode && typeNode.innerText) {
+        if (typeNode?.innerText) {
             const typeText = typeNode.innerText.trim()
             const matches = [...typeText.matchAll(/Form:[\n\r\s]*(\w+)/gi)]
-            if (matches[0] && matches[0][1]) {
+            if (matches?.[0]?.[1]) {
                 return matches[0][1]
             }
         }
@@ -80,7 +80,7 @@ function getCaseDate(caseHtml) {
                     /Date of document:[\n\r\s]*(\d{1,2}\/\d{1,2}\/\d{4})/gim
                 ),
             ]
-            if (matches[0] && matches[0][1]) {
+            if (matches?.[0]?.[1]) {
                 return matches[0][1]
             }
             matches = [
@@ -88,7 +88,7 @@ function getCaseDate(caseHtml) {
                     /Date of vote:[\n\r\s]*(\d{1,2}\/\d{1,2}\/\d{4})/gim
                 ),
             ]
-            if (matches[0] && matches[0][1]) {
+            if (matches?.[0]?.[1]) {
                 return matches[0][1]
             }
             return
@@ -155,7 +155,7 @@ function getDocumentSpecifierFromReference(input) {
         // matches a word  followed by a numberr. E. g. "paragraph 12" or "article 1"
         const specifierRegex = /\b\w+\s\d{1,4}\b/g
         const specifiers = getRegexMatchesFromString(input, specifierRegex)
-        if (specifiers && specifiers.length) return specifiers
+        if (specifiers?.length) return specifiers
         return []
     } catch (e) {
         return []
@@ -167,7 +167,7 @@ function getCelexIDFromString(input) {
         // based on https://eur-lex.europa.eu/content/help/eurlex-content/celex-number.html
         const celexRegex = /[\d|E|C][12]\d{3}[a-zA-Z]{1,2}\d{1,4}/g
         const celexID = getRegexMatchesFromString(input, celexRegex)
-        if (celexID && celexID.length) return celexID
+        if (celexID?.length) return celexID
         return []
     } catch (e) {
         return []

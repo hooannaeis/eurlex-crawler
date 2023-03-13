@@ -11,7 +11,7 @@ async function getParsedBody(celexID) {
     try {
         const caseBody = await getParsedHtml(CASE_BODY_URL)
         const caseParagraphs = getListTextsBySelector(caseBody, 'body p', true)
-        if (caseParagraphs && caseParagraphs.length) {
+        if (caseParagraphs?.length) {
             return caseParagraphs
         }
         return ['no body found']

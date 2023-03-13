@@ -10,7 +10,7 @@ async function getParsedHtml(url) {
         }
         throw new Error(response)
     } catch (error) {
-        if (error.response && error.response.statusText)
+        if (error?.response?.statusText)
             return console.log(error.response.statusText)
         console.log(error)
     }
@@ -37,7 +37,7 @@ function getListTextsBySelector(caseHtml, selector, emphasizeNodeSpecialness) {
     try {
         const listItems = []
         const itemNodes = caseHtml.querySelectorAll(selector)
-        if (itemNodes && itemNodes.length) {
+        if (itemNodes?.length) {
             let previousClassName
             itemNodes.forEach((itemNode) => {
                 const cleanItemNode = cleanseString(itemNode.innerText.trim())

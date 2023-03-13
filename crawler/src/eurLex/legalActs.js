@@ -17,7 +17,7 @@ async function getAllLegalActs() {
     for (let currentPage = 1; currentPage <= maxPages; currentPage += 1) {
         console.log(`page: ${currentPage}/${maxPages}`)
         const celexIDs = await getLegalActIDs(currentPage)
-        if (celexIDs.length) {
+        if (celexIDs?.length) {
             let prevEurlexDataJson = {}
             try {
                 const prevEurlexData = await readFileSync(FILE_PATH)
@@ -37,7 +37,7 @@ async function getDataFromCelexIDs(celexIDs, prevEurlexDataJson) {
     const eurLexData = {}
     for (let i = 0; i < celexIDs.length; i++) {
         const celexID = celexIDs[i]
-        if (prevEurlexDataJson[celexID]) {
+        if (prevEurlexDataJson?.[celexID]) {
             console.log(`${celexID} --- skipping`)
             continue
         }

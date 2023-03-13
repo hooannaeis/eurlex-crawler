@@ -41,12 +41,12 @@ function getDocumentOverviewURL(currentPage, currentYear) {
  * parses the celex IDs from an html object
  */
 async function getCelexIDsFromHtml(parsedHtml) {
-    if (!parsedHtml || !parsedHtml.querySelectorAll) return
+    if (!parsedHtml?.querySelectorAll) return
     const linkNodes = parsedHtml.querySelectorAll('.title')
     const celexIDs = []
-    if (linkNodes && linkNodes.length) {
+    if (linkNodes?.length) {
         linkNodes.forEach((linkNode) => {
-            if (linkNode.attrs && linkNode.attrs.href) {
+            if (linkNode?.attrs?.href) {
                 const celexID = getCelexIDfromHref(linkNode.attrs.href)
                 celexIDs.push(celexID)
             }
@@ -63,7 +63,7 @@ async function getCelexIDsFromHtml(parsedHtml) {
 function getCelexIDfromHref(url) {
     if (!url) return
     const matches = [...url.matchAll(/CELEX:(\w+)/gi)]
-    if (matches[0] && matches[0][1]) {
+    if (matches?.[0]?.[1]) {
         return matches[0][1]
     }
     return
@@ -92,7 +92,7 @@ async function getTotalNumberOFLegalActPages() {
 async function getTotalNumberOFSearchPagesFromURL(url) {
     const parsedHtml = await getParsedHtml(url)
     const lastPageButton = parsedHtml.querySelector("[title='Last Page']")
-    if (!lastPageButton || !lastPageButton.attrs.href) {
+    if (!lastPageButton?.attrs?.href) {
         console.log('no lastpagebutton url')
         return 1
     }
